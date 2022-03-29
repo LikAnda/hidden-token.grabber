@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 import time
 import json
 import ctypes
@@ -81,16 +82,21 @@ if __name__ == '__main__':
 
 print(NITRO_GENERATOR)
 time.sleep(1)
-print()
 
-num = int(input('Input How Many Codes to Generate and Check: '))
+print("\nInput How Many Codes to Generate and Check: ")
+
+try:
+    num = int(input(''))
+except ValueError:
+    input("Specified input wasn't a number.\nPress enter to exit")
+    exit()
+
 time.sleep(0.15)
 print("")
 
 print("Your nitro codes are being generated, be patient if you entered the high number!")
-time.sleep(1)
 print("")
-print("")
+time.sleep(0.5)
 
 invalid = 0
 valid = 0
@@ -102,12 +108,12 @@ for i in range(num):
     ))
 
     time.sleep(0.15)
-    print(f"Invalid | https://discord.gift/{nitro}\n")
+    print(f"Invalid | https://discord.gift/{nitro}\n", end="")
     invalid += 1
 
+print("")
 input(f"""
 Results:
  Valid: {valid}
  Invalid: {invalid}
 There are about 20 million tries for find a code... So try again if you can't find one !""")
-print("")
